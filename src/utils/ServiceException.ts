@@ -22,4 +22,11 @@ export class ServiceException {
   throwInvalidCreds() {
     throw new HttpException('Incorrect Credentials', HttpStatus.UNAUTHORIZED);
   }
+
+  throwAmountMismatch() {
+    throw new HttpException(
+      'Amount Mismatch',
+      HttpStatus.INTERNAL_SERVER_ERROR,
+    );
+  }
 }

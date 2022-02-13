@@ -22,6 +22,23 @@ export class TransactionController {
     res.status(204).send();
   }
 
+  @Post(':id/splitExactly')
+  async createSplitExactly(
+    @VerifyTokenUser() user: string,
+    @Body() body: bodyJson3,
+    @Res() res,
+    @Param() params,
+  ): Promise<void> {
+    await this.transactionService.createExactSplit(
+      params.id,
+      user,
+      body.name,
+      body.amount,
+      body.split,
+    );
+    res.status(204).send();
+  }
+
   @Post(':id/settleUp')
   async settleUp(
     @VerifyTokenUser() user: string,
@@ -53,4 +70,10 @@ interface bodyJson {
 
 interface bodyJson2 {
   to: string;
+}
+
+interface bodyJson3 {
+  name: string;
+  amount: number;
+  split: { [key: string]: number };
 }

@@ -214,7 +214,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmVldGh1IiwiaWF0IjoxNjQ0NDM2NTU2fQ.yEF2RIDUzuC1wB5A3dm8l2SCQtUglhu2Cd8iMIpw0sk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia2l0Y2h1IiwiaWF0IjoxNjQ0NzMxMzQ1fQ.1TkYPMaUioZpErswxRBQiB3Xr6StUaXT-3Ldis51--g",
 							"type": "string"
 						}
 					]
@@ -255,7 +255,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmVldGh1IiwiaWF0IjoxNjQ0NDM2NTU2fQ.yEF2RIDUzuC1wB5A3dm8l2SCQtUglhu2Cd8iMIpw0sk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmVldGh1IiwiaWF0IjoxNjQ0NzMzMTY5fQ.PjNYQhfpMItXakDY2tir9yHWS7Brza7WrtGyf3rw4qU",
 							"type": "string"
 						}
 					]
@@ -289,14 +289,14 @@
 			"response": []
 		},
 		{
-			"name": "Get transaction history",
+			"name": "Get Transaction",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia3V0dGFuIiwiaWF0IjoxNjQ0NDY1NDEwfQ.U_HWuM-ghm56MIuRdn-Qq_zYUCW0wh-Oa_ugVUJ2k30",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia2l0Y2h1IiwiaWF0IjoxNjQ0NzMxMzQ1fQ.1TkYPMaUioZpErswxRBQiB3Xr6StUaXT-3Ldis51--g",
 							"type": "string"
 						}
 					]
@@ -314,6 +314,47 @@
 						"v1",
 						"transaction",
 						"g1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction - Split Exactly",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoia2l0Y2h1IiwiaWF0IjoxNjQ0NzMxMzQ1fQ.1TkYPMaUioZpErswxRBQiB3Xr6StUaXT-3Ldis51--g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test\",\n    \"amount\":900,\n    \"split\":{\n        \"kitchu\":100,\n        \"neethu\":800\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/transaction/g1/splitExactly",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"transaction",
+						"g1",
+						"splitExactly"
 					]
 				}
 			},
